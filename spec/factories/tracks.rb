@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :track do
-    url "MyString"
-    date "2017-08-15 11:35:13"
-    user nil
+    url Faker::Internet.url
+    date Faker::Date.between(20.days.ago, Date.today)
+    user 1
   end
 end
