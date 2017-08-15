@@ -1,3 +1,4 @@
 class User < ApplicationRecord
-   validates_presence_of :email
+  has_many :tracks, dependent: :destroy
+  validates_presence_of :email
 end
