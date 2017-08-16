@@ -58,6 +58,23 @@ RSpec.describe 'User API', type: :request do
       end
     end
 
+    context 'when the request has nested attributes' do
+      before { post '/api/v1/users', params: { name: 'Nelson', email: 'nelsongborges@gmail.com',  tracks_attributes: [{url: '/', date: '2017-08-16 15:11:06.822420'}] } }
+
+      it 'creates a user' do
+        expect(json['name']).to eq('Nelson')
+      end
+
+      it 'creates the tracks' do
+        created_user = User.find(json['id'])
+        expect(created_user.tracks).not_to be_empty
+      end
+
+      it 'returns status code 201' do
+        expect(response).to have_http_status(201)
+      end
+    end
+
     context 'when the request is invalid' do
       before { post '/api/v1/users', params: { name: 'Nelson' } }
 
