@@ -1,6 +1,8 @@
-# README
+# Description
 
-Things you may want to cover:
+Rails 5 API to receive data from a user navigation tracker.
+
+# Usage
 
 * Ruby version: 2.4.0
 
@@ -9,3 +11,7 @@ Things you may want to cover:
 * Database initialization: rake db:migrate
 
 * How to run the test suite: bundle exec rspec
+
+* How to run local server: rails s
+
+* [App Heroku](https://evening-plateau-25555.herokuapp.com/)
