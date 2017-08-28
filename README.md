@@ -1,6 +1,6 @@
 # Description
 
-Rails 5 API to receive data from a user navigation tracker.
+Rails 5 API to receive data from a [user navigation tracker](https://site-rd.herokuapp.com/)
 
 # Usage
 
@@ -14,4 +14,4 @@ Rails 5 API to receive data from a user navigation tracker.
 
 * How to run local server: rails s
 
-* [App Heroku](https://evening-plateau-25555.herokuapp.com/)
+* [App Heroku](https://rd-leads-api.herokuapp.com/)
