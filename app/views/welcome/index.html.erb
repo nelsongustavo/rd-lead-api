@@ -1,23 +1,31 @@
 <h1>Leads list</h1>
 
-<div class="leads">
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Email</th>
-        <th>page views</th>
-        <th></th>
-      </tr>
-    </thead>
+<% if @users.empty? %>
 
-    <% @users.each do |user| %>
-      <tbody>
+  <div class="leads">
+    <table class="table table-striped">
+      <thead>
         <tr>
-          <td><%= user.email %></td>
-          <td><%= user.tracks.size %></td>
-          <td><%= link_to "show", controller: "welcome", action: "show", id: user %></td>
+          <th>Email</th>
+          <th>page views</th>
+          <th></th>
         </tr>
-      </tbody>
-    <% end %>
-  </table>
-</div>
+      </thead>
+
+      <% @users.each do |user| %>
+        <tbody>
+          <tr>
+            <td><%= user.email %></td>
+            <td><%= user.tracks.size %></td>
+            <td><%= link_to "show", controller: "welcome", action: "show", id: user %></td>
+          </tr>
+        </tbody>
+      <% end %>
+    </table>
+  </div>
+
+<% else %>
+
+<p> There's no leads yet. </p>
+
+<% end %>
