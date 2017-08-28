@@ -27,7 +27,7 @@ class Api::V1::TracksController < Api::V1::BaseController
   private
 
   def track_params
-    params.permit(:url, :date)
+    params.permit(:url, :date, :user_id)
   end
 
   def set_user

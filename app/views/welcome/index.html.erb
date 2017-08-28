@@ -1,15 +1,23 @@
-<h1>Listing Userss</h1>
+<h1>Leads list</h1>
 
-<table>
-  <tr>
-    <th>Email</th>
-    <th>page views</th>
-  </tr>
+<div class="leads">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Email</th>
+        <th>page views</th>
+        <th></th>
+      </tr>
+    </thead>
 
-<% @users.each do |user| %>
-  <tr>
-    <td><%= user.email %></td>
-    <td>10</td>
-  </tr>
-<% end %>
-</table>
+    <% @users.each do |user| %>
+      <tbody>
+        <tr>
+          <td><%= user.email %></td>
+          <td><%= user.tracks.size %></td>
+          <td><%= link_to "show", controller: "welcome", action: "show", id: user %></td>
+        </tr>
+      </tbody>
+    <% end %>
+  </table>
+</div>
